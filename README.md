@@ -86,6 +86,7 @@ See [`docs/expected-results.md`](docs/expected-results.md) for the expected find
 
 - [Business Rules](docs/business-rules.md)
 - [Expected Results](docs/expected-results.md)
+- [SQL Examples](docs/sql-examples.md)
 
 ## ⚠️ Scope and Limitations
 
