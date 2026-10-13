@@ -41,10 +41,12 @@ sql-data-quality-checker/
 │   ├── 03_check_duplicates.sql
 │   ├── 04_check_required_fields.sql
 │   ├── 05_check_orphan_records.sql
-│   └── 06_check_invalid_values.sql
+│   ├── 06_check_invalid_values.sql
+│   └── 07_audit_report.sql
 └── docs/
     ├── business-rules.md
-    └── expected-results.md
+    ├── expected-results.md
+    └── sql-examples.md
 ```
 
 ## 🔍 Data Quality Checks
@@ -56,6 +58,7 @@ sql-data-quality-checker/
 | Missing order fields | Detects missing order dates and total amounts. |
 | Orphan orders | Finds orders without a matching customer. |
 | Invalid amounts | Identifies negative order totals. |
+| Consolidated audit report | Combines multiple data quality checks into a single result set. |
 
 ## 🚀 How to Run
 
@@ -71,6 +74,7 @@ sql-data-quality-checker/
 3. Execute `01_create_tables.sql` to create the database and tables.
 4. Execute `02_insert_sample_data.sql` to populate the sample dataset.
 5. Execute the audit scripts individually to inspect the results.
+6. Execute `07_audit_report.sql` to generate the consolidated audit report.
 
 > **Important:** Run the sample insertion script only once on a fresh dataset. Running it repeatedly will insert duplicate sample records and change the expected audit results.
 

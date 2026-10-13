@@ -90,6 +90,33 @@
 
 > **Important:** These are expected findings for the supplied sample data. Results may differ if the dataset is modified or the sample insertion script is executed more than once.
 
+## 7. 📊 Consolidated Audit Report
+
+**Script:** `07_audit_report.sql`
+
+The consolidated report combines findings from all data quality checks into a single result set.
+
+### Expected Findings
+
+| Issue Type | Expected Findings |
+|---|---:|
+| Duplicate CPF | 2 |
+| Missing customer name | 2 |
+| Missing customer CPF | 2 |
+| Missing order date | 1 |
+| Missing order amount | 1 |
+| Orphan order | 1 |
+| Negative order amount | 1 |
+| **Total audit findings** | **10** |
+
+### How to Interpret the Results
+
+Each row represents one audit finding, not necessarily one unique record.
+
+For example, a customer may appear more than once if the record violates multiple rules. Likewise, duplicate CPF detection returns one finding for each customer involved in the duplication.
+
+The report is read-only and does not automatically modify or delete records.
+
 ---
 
 *Project: SQL Data Quality Checker · Database: MariaDB*
