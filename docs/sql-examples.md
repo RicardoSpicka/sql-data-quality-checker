@@ -141,7 +141,30 @@ ORDER BY id;
 
 **Business value:** Converts technical validation conditions into results that are easier to interpret and investigate.
 
-## 5. 🧠 Key Takeaways
+## 5. 📊 Consolidated Audit Report
+
+**Script:** `07_audit_report.sql`
+
+The consolidated audit report combines findings from multiple data quality checks into a single result set.
+
+### Key technique: `UNION ALL`
+
+`UNION ALL` combines compatible result sets without removing duplicate rows. This allows each audit finding to remain visible, even when multiple findings refer to the same customer or order.
+
+The report includes:
+
+- `tipo_problema`: identifies the violated rule.
+- `tabela_origem`: identifies the source table.
+- `registro_id`: identifies the affected record.
+- `descricao`: explains the issue.
+- `valor_encontrado`: provides the relevant value when available.
+
+**Expected result:** 10 audit findings using the original sample dataset.
+
+The report is read-only and does not automatically modify or delete records.
+
+
+## 6. 🧠 Key Takeaways
 
 This project demonstrates how SQL can be used not only to retrieve data, but also to investigate its reliability.
 
